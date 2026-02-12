@@ -1,5 +1,16 @@
-div {
-    background-color: firebrick;
-    height: 50px;
-    
+:root {
+    --accent: #2563eb;
+    --block-bg--dark-: radial-gradient(#1c2634, #1e2835);
+    --body-bg--dark: radial-gradient(circle at 0 0,#121827,#161f36);
+    --body-text: #d1d5db;
+    --heading: #e5e7eb;
+}
+
+body {
+    color: var(--body-text);
+    background: var(--body-bg--dark);
+}
+
+h1,h2,h3,h4,h5,h6 {
+    color: var(--heading);
 }
