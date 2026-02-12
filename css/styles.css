@@ -1,12 +1,13 @@
 :root {
     --accent: #2563eb;
     --block-bg--dark-: radial-gradient(#1c2634, #1e2835);
-    --block-bg--light: #fff;
     --body-bg--dark: radial-gradient(circle at 0 0,#121827,#161f36);
-    --body-bg--light: radial-gradient(circle at 0 0, #d6e8ff, #cadaff);
     --body-text--dark: #d1d5db;
-    --body-text--light:rgb(75, 85, 99);
     --heading--dark: #e5e7eb;
+
+    --block-bg--light: #fff;
+    --body-bg--light: radial-gradient(circle at 0 0, #d6e8ff, #cadaff);
+    --body-text--light:rgb(75, 85, 99);
     --heading--light:rgb(31, 41, 55);
 }
 
@@ -21,11 +22,19 @@ html {
 /* Typography */
 
 body {
-    color: var(--body-text--light);
-    background: var(--body-bg--light);
     font-family: Montserrat, sans-serif;
     line-height: 1.5;
     font-size: clamp(1.6rem, 1.5vw, 2.0rem);
+}
+
+.light-mode {
+    color: var(--body-text--light);
+    background: var(--body-bg--light);
+}
+
+.dark-mode {
+    color: var(--body-text--dark);
+    background: var(--body-bg--dark);
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -52,4 +61,44 @@ h3 {
 
 p {
     margin-top: 0;
+}
+
+/* Buttons */
+
+.btn {
+    text-transform: capitalize;
+    text-decoration: none;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.6rem;
+    padding: 1.5rem 2.5rem;
+    border: 0;
+    border-radius: 10px;
+    transition: all .4s ease;
+    outline: 0;
+}
+
+.btn--accent {
+    background-color: var(--accent);
+    color: #fff;
+}
+
+.btn--accent:hover {
+    background-color: #1d4ed8;
+}
+
+.btn--outline {
+    background-color: transparent;
+    border: 2px solid var(--accent);
+    color: var(--accent);
+}
+
+.btn--outline:hover {
+    background-color: var(--accent);
+    color: #fff;
+}
+
+.btn--block {
+    display: block;
+    width: 100%;
 }
