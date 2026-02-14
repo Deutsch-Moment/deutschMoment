@@ -1,6 +1,6 @@
 :root {
     --accent: #2563eb;
-    --block-bg--dark-: radial-gradient(#1c2634, #1e2835);
+    --block-bg--dark: radial-gradient(#1c2634, #1e2835);
     --body-bg--dark: radial-gradient(circle at 0 0,#121827,#161f36);
     --body-text--dark: #d1d5db;
     --heading--dark: #e5e7eb;
@@ -32,13 +32,20 @@ body {
     background: var(--body-bg--light);
 }
 
+.light-mode .heading {
+    color: var(--heading--light);
+}
+
 .dark-mode {
     color: var(--body-text--dark);
     background: var(--body-bg--dark);
 }
 
+.dark-mode .heading {
+    color: var(--heading--dark);
+}
+
 h1,h2,h3,h4,h5,h6 {
-    color: var(--heading--light);
     margin: 0 0 3rem;
     font-weight: 700;
 }
@@ -102,3 +109,25 @@ p {
     display: block;
     width: 100%;
 }
+
+/* Container */
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.block {
+    text-align: center;
+    border-radius: 20px;
+    padding: 1rem 2rem;
+}
+
+.light-mode .block {
+    background: var(--block-bg--light);
+}
+
+.dark-mode .block {
+    background: var(--block-bg--dark);
+}
+
