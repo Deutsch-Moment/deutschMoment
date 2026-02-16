@@ -15,6 +15,11 @@
     box-sizing: border-box;
 }
 
+:focus:not(:focus-visible) {
+    outline: none;
+}
+
+
 html {
     font-size: 62.5%;
 }
@@ -25,6 +30,8 @@ body {
     font-family: Montserrat, sans-serif;
     line-height: 1.5;
     font-size: clamp(1.6rem, 1.5vw, 2.0rem);
+    min-height: 100vh;
+    transition: color 0.4s ease, background .4s ease;
 }
 
 .light-mode {
@@ -93,7 +100,7 @@ ul {
 }
 
 .list--vertical {
-    gap: 2rem;
+    gap: 1rem;
     flex-direction: column;
 }
 
@@ -207,4 +214,192 @@ label {
     font-weight: 500;
     font-size: 1.4rem;
     font-family: 'Roboto', sans-serif;
+}
+
+/* Nav Bar */
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .5rem 1rem;
+    flex-wrap: wrap;
+    opacity: .9;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+}
+
+.light-mode .nav {
+    background-color: #fff;
+}
+
+.dark-mode .nav {
+    background-color: var(--block-bg--dark);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+}
+
+.logo span {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.light-mode .logo span {
+    color: #000;
+}
+
+.dark-mode .logo span {
+    color: #fff;
+}
+
+.logo div {
+    display: inline-block;
+}
+
+.logo div span {
+    color: var(--accent) !important;
+    font-size: 2.4rem;
+    display: block;
+    line-height: 1;
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+#dark-mode {
+    border: 0;
+    border-radius: 10px;
+    padding: 1rem;
+    transition: .5s ease;
+    outline: 0;
+}
+
+.light-mode #dark-mode {
+    background-color: #d1d5db;
+}
+
+.dark-mode #dark-mode {
+    background-color: #4b5563;
+}
+
+#dark-mode:hover {
+    transform: rotate(-180deg);
+}
+
+.toggler-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-toggler {
+    width: 40px;
+    height: 40px;
+    transition: .5s ease;
+}
+
+.light-mode .menu-toggler {
+    fill: #000;
+    opacity: .5;
+}
+
+.light-mode .menu-toggler:hover {
+    opacity: 1;
+}
+
+.dark-mode .menu-toggler {
+    fill: #fff;
+    opacity: .5;
+}
+
+.dark-mode .menu-toggler:hover {
+    opacity: 1;
+}
+
+.nav ul {
+    width: 100%;
+    overflow: hidden;
+    margin: 1rem 0 0;
+    transition: height .5s ease, opacity .5s ease;
+}
+
+.nav li {
+    text-align: end;
+    width: 100%;
+    transition: all .5s ease;
+    padding: .8rem 1rem;
+    border-radius: 5px;
+}
+
+.light-mode .nav li:hover {
+    background-color: #f3f4f6;
+    color: #000;
+}
+
+.dark-mode .nav li:hover {
+    background-color: #374151;
+    color: #fff;
+}
+
+.collapsible {
+    height: 0;
+    opacity: 0;
+}
+
+.collapsible--active {
+    height: 100%;
+    opacity: 1;
+}
+
+@media screen and (min-width: 768px) {
+    .buttons-container {
+        order: 3;
+    }
+    .menu-toggler {
+        display: none;
+    }
+
+    .nav ul {
+        width: auto;
+        flex-direction: row;
+        height: auto;
+        opacity: 1;
+        margin: 0;
+    }
+
+    .nav li {
+        position: relative;
+        width: auto;
+    }
+
+    .nav li::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: var(--accent);
+        transform-origin: center;
+        transition: transform 0.3s ease-out;
+    }
+
+    .nav li:hover::after {
+        transform: scaleX(1);
+    }
+
+    .nav li.link-active::after {
+        transform: scaleX(1);
+    }
 }
