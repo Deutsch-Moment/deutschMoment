@@ -4,13 +4,15 @@
     --accent-secondary: #FFCC00;  /* Gold for secondary icons or highlights */
     
     /* DARK MODE */
-    --block-bg--dark: radial-gradient(#212121, #000000);
+    --block-bg--dark: radial-gradient(#1e1e1e, #000000);
+    --block-bg--dark-mute: #111316;
     --body-bg--dark: radial-gradient(circle at 0 0, #000000, #1a1a1a); /* Pure Black to Dark Gray */
     --body-text--dark: #e5e7eb;
     --heading--dark: #FFCC00;      /* Golden headings look stunning on dark backgrounds */
 
     /* LIGHT MODE */
     --block-bg--light: #fff;
+    --block-bg--light-mute: #f1f0f0;
     --body-bg--light: #f9f9f9;    /* Clean off-white instead of blue gradient */
     --body-text--light: #1f2937;
     --heading--light: #000000;     /* Strong Black headings */
@@ -149,7 +151,7 @@ ul {
     width: 100%;
 }
 
-/* Container */
+/* Container & Blocks */
 
 .container {
     max-width: 1400px;
@@ -168,6 +170,14 @@ ul {
 
 .dark-mode .block {
     background: var(--block-bg--dark);
+}
+
+.light-mode .block--mute {
+    background-color: var(--block-bg--light-mute);
+}
+
+.dark-mode .block--mute {
+    background-color: var(--block-bg--dark-mute);
 }
 
 /* Grid */
@@ -453,4 +463,89 @@ label {
     object-fit: cover;
     width: 100%;
     border-radius: 10px;
+}
+
+/* About Section */
+
+.about-section {
+    margin-top: 10rem;
+    text-align: start;
+    padding: 2rem;
+}
+
+.about-section.grid {
+    gap: 2rem;
+}
+
+.stats {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+.stat-card {
+    width: 100%;
+    border-radius: 10px;
+    padding: 1rem;
+    text-align: center;
+}
+
+.stat-card__number {
+    font-size: 2.4rem;
+    color: var(--accent);
+    font-weight: 700;
+}
+
+.stat-card__label {
+    font-size: 1.4rem;
+    margin-bottom: 0;
+    font-weight: 500;
+}
+
+.instructor-card {
+    padding: 2rem;
+}
+
+.profile-img {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 2rem;
+    background-color: var(--accent);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 5rem;
+}
+
+.bio {
+    font-size: 1.4rem;
+}
+
+/* Features */
+
+.featured {
+    text-align: center;
+    padding: 2rem;
+}
+
+.features-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.feature__icon {
+    font-size: 3.6rem;
+    margin-bottom: 1rem;
+}
+
+.feature .heading {
+    margin-bottom: 1rem;
+}
+
+.feature__desc {
+    font-size: 1.6rem;
+    font-family: 'Roboto', sans-serif;
 }
