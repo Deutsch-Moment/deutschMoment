@@ -1,14 +1,19 @@
 :root {
-    --accent: #2563eb;
-    --block-bg--dark: radial-gradient(#1c2634, #1e2835);
-    --body-bg--dark: radial-gradient(circle at 0 0,#121827,#161f36);
-    --body-text--dark: #d1d5db;
-    --heading--dark: #e5e7eb;
+    /* GERMAN THEME UPDATES */
+    --accent: #DD0000;            /* Traffic Red for "View Courses" button */
+    --accent-secondary: #FFCC00;  /* Gold for secondary icons or highlights */
+    
+    /* DARK MODE */
+    --block-bg--dark: radial-gradient(#212121, #000000);
+    --body-bg--dark: radial-gradient(circle at 0 0, #000000, #1a1a1a); /* Pure Black to Dark Gray */
+    --body-text--dark: #e5e7eb;
+    --heading--dark: #FFCC00;      /* Golden headings look stunning on dark backgrounds */
 
+    /* LIGHT MODE */
     --block-bg--light: #fff;
-    --body-bg--light: radial-gradient(circle at 0 0, #d6e8ff, #cadaff);
-    --body-text--light:rgb(75, 85, 99);
-    --heading--light:rgb(31, 41, 55);
+    --body-bg--light: #f9f9f9;    /* Clean off-white instead of blue gradient */
+    --body-text--light: #1f2937;
+    --heading--light: #000000;     /* Strong Black headings */
 }
 
 *, *::after, *::before {
@@ -125,7 +130,7 @@ ul {
 }
 
 .btn--accent:hover {
-    background-color: #1d4ed8;
+    background-color: #ff2323;
 }
 
 .btn--outline {
@@ -165,14 +170,28 @@ ul {
     background: var(--block-bg--dark);
 }
 
+/* Grid */
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+@media screen and (min-width: 1000px) {
+    .grid--1x2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 /* Inputs */
+
 .input-group {
     text-align: start;
 }
 
 .input {
     border-radius: 8px;
-    border: 1px solid #4B5563;
+    border: 1px solid #000;
     font-size: 1.6rem;
     margin-bottom: 3rem;
     outline: 0;
@@ -183,29 +202,29 @@ ul {
 }
 
 .input:hover {
-    border-color: #6b7280; /* Slightly darker than default, but not the accent yet */
+    border-color: var(--accent); 
 }
 
 .light-mode .input {
-    background-color: #fff;
-    color: #000;
-    caret-color: #121827;
+    background-color: #FFFFFF;
+    color: #000000;
+    caret-color: #000000;
 }
 
 .light-mode .input:focus {
-    border-color: var(--accent);
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2); 
+    border-color: #FFCE00;
+    box-shadow: 0 0 0 3px rgba(255, 206, 0, 0.4); 
 }
 
 .dark-mode .input{
-    background-color: #374151;
-    caret-color: #cadaff;
-    color: #fff;
+    background-color: #212121;
+    caret-color: #FFCE00;
+    color: #FFFFFF;
 }
 
 .dark-mode .input:focus {
-    border-color: #60a5fa;
-    box-shadow: 0 0 4px rgba(96, 165, 250, 0.5); 
+    border-color: #FFCE00;
+    box-shadow: 0 0 4px rgba(255, 206, 0, 0.6); 
 }
 
 label {
@@ -219,16 +238,19 @@ label {
 /* Nav Bar */
 
 .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.nav .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: .5rem 1rem;
     flex-wrap: wrap;
-    opacity: .9;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 10;
+    padding: .5rem 1rem;
 }
 
 .light-mode .nav {
@@ -236,7 +258,7 @@ label {
 }
 
 .dark-mode .nav {
-    background-color: var(--block-bg--dark);
+    background: var(--block-bg--dark);
 }
 
 .logo {
@@ -272,7 +294,7 @@ label {
 
 .buttons-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     gap: 1rem;
 }
 
@@ -285,11 +307,11 @@ label {
 }
 
 .light-mode #dark-mode {
-    background-color: #d1d5db;
+    background-color: #ededed;
 }
 
 .dark-mode #dark-mode {
-    background-color: #4b5563;
+    background-color: #262424;
 }
 
 #dark-mode:hover {
@@ -402,4 +424,33 @@ label {
     .nav li.link-active::after {
         transform: scaleX(1);
     }
+}
+
+/* Hero Section */
+
+.block-hero {
+    margin-top: 10rem;
+    text-align: center;
+    padding: 1rem;
+}
+
+.block-hero.grid {
+    gap: 2rem;
+    justify-items: center;
+}
+
+.hero__description {
+    max-width: 800px;
+    margin: 0 auto 3rem;
+}
+
+.hero-image-wrapper {
+    max-width: 800px;
+    overflow: hidden;
+}
+
+.hero-banner {
+    object-fit: cover;
+    width: 100%;
+    border-radius: 10px;
 }
