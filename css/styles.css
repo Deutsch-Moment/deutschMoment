@@ -70,6 +70,33 @@ p {
     margin-top: 0;
 }
 
+/* links */
+
+a {
+    text-decoration: none;
+    color: inherit;
+    font-size: inherit;
+}
+
+/* Lists */
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+    display: flex;
+}
+
+.list--horizontal {
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.list--vertical {
+    gap: 2rem;
+    flex-direction: column;
+}
+
 /* Buttons */
 
 .btn {
