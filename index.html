@@ -4,11 +4,137 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Deutsch Moment - Where it all make sense</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/styles.css" />
     <script src="js/main.js" defer></script>
   </head>
-  <body>
-    
+  <body class="light-mode">
+    <nav class="nav">
+      <div class="container">
+        <div class="logo">
+          <span>DE</span>
+          <div><span>Deutsch</span><span>Moment</span></div>
+        </div>
+        <div class="buttons-container">
+          <button id="dark-mode">🌙</button>
+          <div class="toggler-wrapper" id="navMenuToggler">
+            <svg
+              class="menu-toggler"
+              viewBox="0 0 1024 1024"
+              version="1.1"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M486.400051 1023.997952c-129.94534 0-252.057096-50.585499-343.960912-142.438115S0.001024 667.544265 0.001024 537.650125c0-129.94534 50.585499-252.057096 142.438115-343.960912S356.454711 51.199898 486.400051 51.199898c129.94534 0 252.057096 50.585499 343.960912 142.489315S972.799078 407.704785 972.799078 537.650125s-50.585499 252.057096-142.438115 343.909712A483.224634 483.224634 0 0 1 486.400051 1023.997952z m0-921.598157C246.426131 102.399795 51.200922 297.625005 51.200922 537.598925S246.426131 972.798054 486.400051 972.798054s435.19913-195.22521 435.19913-435.199129S726.373971 102.399795 486.400051 102.399795z"
+              />
+              <path
+                d="M742.399539 409.599181h-511.998976a25.599949 25.599949 0 0 1 0-51.199898h511.998976a25.599949 25.599949 0 0 1 0 51.199898zM742.399539 563.198874h-511.998976a25.599949 25.599949 0 0 1 0-51.199898h511.998976a25.599949 25.599949 0 0 1 0 51.199898zM742.399539 716.798566h-511.998976a25.599949 25.599949 0 0 1 0-51.199897h511.998976a25.599949 25.599949 0 0 1 0 51.199897z"
+              />
+            </svg>
+          </div>
+        </div>
+        <ul class="list--vertical collapsible">
+          <li class="link-active"><a href="">Home</a></li>
+          <li><a href="">Courses</a></li>
+          <li><a href="">Certificates</a></li>
+          <li><a href="">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    <section>
+      <div class="block-hero grid grid--1x2 container">
+        <div class="hero-content">
+          <h1 class="hero__title heading">Welcome to DeutschMoment</h1>
+          <p class="hero__description">
+            Specialized German language learning center with over 5 years of
+            experience in teaching and preparing students for international
+            exams
+          </p>
+          <div class="buttons-container">
+            <button class="btn btn--accent">View Courses</button>
+            <button class="btn btn--outline">Contact Us</button>
+          </div>
+        </div>
+        <div class="hero-image-wrapper">
+          <img
+            class="hero-banner"
+            src="https://www.stadtrundfahrt.com/upload/system/experience/0a5e0d62a1ea15ae2346db69701c6f58.jpg"
+            alt="Neuschwanstein Castle"
+          />
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="about-section container grid grid--1x2">
+        <div class="stat-section">
+          <h2 class="heading">About Me</h2>
+          <p class="about__description">
+            DeutschMoment German Language Learning Center was established with
+            the goal of providing the best quality education and preparing
+            students for study and work in German-speaking countries.
+          </p>
+          <p class="about__description">
+            We accompany students from beginner to advanced levels using the
+            latest teaching methods and accredited textbooks.
+          </p>
+          <div class="stats">
+            <div class="stat-card block">
+              <div class="stat-card__number">500+</div>
+              <p class="stat-card__label">Students</p>
+            </div>
+            <div class="stat-card block">
+              <div class="stat-card__number">5+</div>
+              <p class="stat-card__label">Years</p>
+            </div>
+          </div>
+        </div>
+        <div class="instructor-card block">
+          <h3 class="heading">Course Instructor</h3>
+          <div class="profile-img">🧑‍🏫</div>
+          <h4 class="instructor-name heading">Omid Sarabi</h4>
+          <div class="bio">
+            <p>PhD in German Linguistics from University of Berlin</p>
+            <ul class="achievments list--vertical">
+              <li>✓ TestDaF Certificate</li>
+              <li>✓ Goethe Institute Certificate</li>
+              <li>✓ 10+ Years Teaching Experience</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="featured container">
+        <h3 class="heading">Features of Our Courses</h3>
+        <div class="features-container">
+          <div class="feature block">
+            <div class="feature__icon">📚</div>
+            <h4 class="heading">Accredited Textbooks</h4>
+            <p class="feature__desc">
+              Using the latest Netzwerk and Menschen books
+            </p>
+          </div>
+          <div class="feature block">
+            <div class="feature__icon">🎯</div>
+            <h4 class="heading">Exam Preparation</h4>
+            <p class="feature__desc">
+              Complete preparation for TestDaF and Goethe exams
+            </p>
+          </div>
+          <div class="feature block">
+            <div class="feature__icon">👥</div>
+            <h4 class="heading">Small Classes</h4>
+            <p class="feature__desc">
+              Maximum 8 people per class for more attention
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
   </body>
 </html>
