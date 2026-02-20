@@ -18,8 +18,23 @@ navLinks.forEach(link => {
         e.preventDefault();
         const clickedItem = e.target.closest('li');
         if(clickedItem) {
-            navMenu.querySelector('.link-active')?.classList.remove('link-active');
+            const currentActiveLink = navMenu.querySelector('.link-active');
+            currentActiveLink.classList.remove('link-active');
+
+            const currentActivePageId = currentActiveLink.firstElementChild.getAttribute('href');
+            const currentActivePage = document.querySelector(`${currentActivePageId}`);
+            if(currentActivePage) {
+                currentActivePage.style.display = 'none';
+            }
+
             clickedItem.classList.add('link-active');
+            
+            const newActivePageId = clickedItem.firstElementChild.getAttribute('href');
+            const newActivePage = document.querySelector(`${newActivePageId}`);
+            if (newActivePage) {
+                newActivePage.style.display = 'block';
+                navMenu.classList.remove('collapsible--active');
+            }
         }
     })
 });
