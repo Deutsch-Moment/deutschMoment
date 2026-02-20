@@ -1,21 +1,50 @@
 :root {
     /* GERMAN THEME UPDATES */
-    --accent: #DD0000;            /* Traffic Red for "View Courses" button */
-    --accent-secondary: #FFCC00;  /* Gold for secondary icons or highlights */
+    --accent: hsl(0, 100%, 43%);        
+    --accent-darker: hsl(0, 55%, 8%);
+    --accent-secondary:hsl(48, 100%, 50%);
+    --accent-secondary-darker: hsl(48, 76%, 13%);
     
     /* DARK MODE */
-    --block-bg--dark: radial-gradient(#1e1e1e, #000000);
-    --block-bg--dark-mute: #111316;
-    --body-bg--dark: radial-gradient(circle at 0 0, #000000, #1a1a1a); /* Pure Black to Dark Gray */
-    --body-text--dark: #e5e7eb;
-    --heading--dark: #FFCC00;      /* Golden headings look stunning on dark backgrounds */
+    --bg: hsl(0 0 5%);
+    --bg-lighter: hsl(0 0 10%);
+    --bg-darker: hsl(0 0 0);
+    --body-text: hsl(0 0% 95%);
+    --body-text--mute: hsl(0 0% 70%);
+    --heading: hsl(48 100% 50%);
 
+    /* Shadows */
+    --shadow-s: 
+    inset 0 1px 2px #ffffff30, /* top highlight */
+    0 1px 2px #00000030, /* dark shadow */
+    0 2px 4px #00000015; /* soft shadow */
+
+    --shadow-m:
+    inset 0 1px 2px #ffffff50, /* top highlight */
+    0 2px 4px #00000030, /* dark shadow */
+    0 4px 8px #00000015; /* soft shadow */
+
+    --shadow-l:
+    inset 0 1px 2px #ffffff70, /* top highlight */
+    0 4px 6px #00000030, /* dark shadow */
+    0 6px 10px #00000015; /* soft shadow */
+}
+
+body.light {
+    /* ACCENDT COLORS */
+    --accent-darker: hsl(0, 79%, 94%);
+    --accent-secondary-darker: hsl(48, 100%, 90%);
     /* LIGHT MODE */
-    --block-bg--light: #fff;
-    --block-bg--light-mute: #f1f0f0;
-    --body-bg--light: #f9f9f9;    /* Clean off-white instead of blue gradient */
-    --body-text--light: #1f2937;
-    --heading--light: #000000;     /* Strong Black headings */
+    --bg: hsl(0 0% 95%);
+    --bg-lighter: hsl(0 0% 100%);
+    --bg-darker: hsl(0 0% 90%);
+    --bg-hover:  linear-gradient(
+        to bottom, 
+        hsl(0 0% 100%),
+        hsl(0 0% 95%));
+    --body-text: hsl(0 0% 5%);
+    --body-text--mute: hsl(0 0% 30%);
+    --heading: hsl(0 0% 0%);
 }
 
 *, *::after, *::before {
@@ -34,29 +63,17 @@ html {
 /* Typography */
 
 body {
+    background: var(--bg);
+    color: var(--body-text);
     font-family: Montserrat, sans-serif;
-    line-height: 1.5;
     font-size: clamp(1.6rem, 1.5vw, 2.0rem);
+    line-height: 1.5;
     min-height: 100vh;
     transition: color 0.4s ease, background .4s ease;
 }
 
-.light-mode {
-    color: var(--body-text--light);
-    background: var(--body-bg--light);
-}
-
-.light-mode .heading {
-    color: var(--heading--light);
-}
-
-.dark-mode {
-    color: var(--body-text--dark);
-    background: var(--body-bg--dark);
-}
-
-.dark-mode .heading {
-    color: var(--heading--dark);
+.heading {
+    color: var(--heading);
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -124,6 +141,12 @@ ul {
     border-radius: 10px;
     transition: all .4s ease;
     outline: 0;
+    text-wrap: nowrap;
+    box-shadow: var(--shadow-s);
+}
+
+.btn:hover {
+    box-shadow: var(--shadow-m);
 }
 
 .btn--accent {
@@ -132,7 +155,7 @@ ul {
 }
 
 .btn--accent:hover {
-    background-color: #ff2323;
+    background-color: hsl(0, 100%, 30%);
 }
 
 .btn--outline {
@@ -159,25 +182,20 @@ ul {
 }
 
 .block {
-    text-align: center;
+    background: var(--bg-lighter);
     border-radius: 20px;
     padding: 1rem 2rem;
+    text-align: center;
+    box-shadow: var(--shadow-s);
+    transition: box-shadow .3s ease;
 }
 
-.light-mode .block {
-    background: var(--block-bg--light);
+.block:hover {
+    box-shadow: var(--shadow-l);
 }
 
-.dark-mode .block {
-    background: var(--block-bg--dark);
-}
-
-.light-mode .block--mute {
-    background-color: var(--block-bg--light-mute);
-}
-
-.dark-mode .block--mute {
-    background-color: var(--block-bg--dark-mute);
+.block--mute {
+    background-color: var(--bg-darker);
 }
 
 /* Grid */
@@ -200,8 +218,11 @@ ul {
 }
 
 .input {
+    background-color: var(--bg-lighter);
     border-radius: 8px;
     border: 1px solid #000;
+    caret-color: var(--accent-secondary);
+    color: var(--body-text);
     font-size: 1.6rem;
     margin-bottom: 3rem;
     outline: 0;
@@ -215,26 +236,9 @@ ul {
     border-color: var(--accent); 
 }
 
-.light-mode .input {
-    background-color: #FFFFFF;
-    color: #000000;
-    caret-color: #000000;
-}
-
-.light-mode .input:focus {
-    border-color: #FFCE00;
+.input:focus {
+    border-color: var(--accent-secondary);
     box-shadow: 0 0 0 3px rgba(255, 206, 0, 0.4); 
-}
-
-.dark-mode .input{
-    background-color: #212121;
-    caret-color: #FFCE00;
-    color: #FFFFFF;
-}
-
-.dark-mode .input:focus {
-    border-color: #FFCE00;
-    box-shadow: 0 0 4px rgba(255, 206, 0, 0.6); 
 }
 
 label {
@@ -243,6 +247,183 @@ label {
     font-weight: 500;
     font-size: 1.4rem;
     font-family: 'Roboto', sans-serif;
+}
+
+/* Course Card */
+
+.courses {
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-auto-flow: dense; /* Crucial: Allows items to fill holes */
+    gap: 2rem;
+    justify-items: center;
+    align-items: start;
+}
+
+
+
+.card {
+    padding: 2rem;
+    max-width: 300px;
+    border: 2px solid var(--accent);
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+.card::before {
+    content: '';
+    display: block;
+    position: absolute;
+    height: 10px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to right, 
+    #000 33%, 
+    var(--accent) 33% 66%, 
+    var(--accent-secondary) 66%);
+}
+
+.card__header {
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    padding: 2rem 2rem 0;
+    font-size: 1.4rem;
+    display: flex;
+    flex: 20% 80%;
+    gap: 2rem;
+}
+
+.card__icon-wrapper {
+    width: 40px;
+    height: 40px;
+    background-color: var(--accent-darker);
+    border-radius: 5px;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--accent);
+}
+
+.card__level {
+    font-size: 1.8rem;
+    margin: 0 1rem 0 0;
+    display: inline;
+}
+
+.card__badge {
+    background-color: var(--accent-secondary-darker);
+    padding: .5rem 1rem;
+    border-radius: 5px;
+    color: var(--accent-secondary);
+    font-family: 'Roboto',sans-serif;
+}
+
+.light .card__badge {
+    color: var(--body-text);
+}
+
+.card__subtitle {
+    margin-top: .8rem;
+    color: var(--body-text--mute);
+}
+
+.card__stats {
+    display: flex;
+    padding: 0 2rem;
+    align-items: center;
+    gap: 4rem;
+    margin-bottom: 2rem;
+}
+
+.course-stat {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    color: var(--accent-secondary);
+}
+
+.course-stat__info {
+    display: flex;
+    flex-direction: column;
+}
+
+.course-stat__label {
+    font-size: 1.4rem;
+    color: var(--body-text--mute);
+}
+
+.course-stat__value {
+    font-size: 1.6rem;
+    color: var(--body-text);
+}
+
+.card__details {
+    border-top: 1px solid hsl(0, 0%, 30%);
+    margin-top: 2rem;
+    font-size: 1.4rem;
+    height: 0;
+    opacity: 0;
+    transition: all .4s ease;
+}
+
+.card__details--active {
+    padding: 2rem 0;
+    height: 100%;
+    opacity: 1;
+}
+
+.card__details .heading {
+    color: var(--accent);
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.course-objectives {
+    padding-left: 2rem;
+}
+
+.course-objectives li {
+    padding-left: .4rem;
+}
+
+.course-objectives li::marker {
+    content: '✓ ';
+    color: var(--accent-secondary);
+    font-weight: bold;
+}
+
+.course-topics .block {
+    text-align: start;
+    border-radius: 10px;
+}
+
+.course-includes {
+    padding-left: 2rem;
+}
+
+.course-includes li {
+    padding-left: 1rem;
+}
+
+.course-includes li::marker {
+    content: '●';
+    color: var(--accent-secondary);
+}
+
+@media screen and (min-width: 660px) {
+    .courses {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .courses {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 /* Nav Bar */
@@ -256,39 +437,26 @@ label {
 }
 
 .nav .container {
+    align-items: center;
+    background: var(--bg);
     display: flex;
     justify-content: space-between;
-    align-items: center;
     flex-wrap: wrap;
     padding: .5rem 1rem;
 }
 
-.light-mode .nav {
-    background-color: #fff;
-}
-
-.dark-mode .nav {
-    background: var(--block-bg--dark);
-}
-
 .logo {
-    display: flex;
     align-items: center;
-    gap: 1rem;
+    color: #fff;
     cursor: pointer;
+    display: flex;
+    gap: 1rem;
 }
 
 .logo span {
     font-size: 2rem;
     font-weight: 700;
-}
-
-.light-mode .logo span {
-    color: #000;
-}
-
-.dark-mode .logo span {
-    color: #fff;
+    color: var(--heading);
 }
 
 .logo div {
@@ -309,23 +477,22 @@ label {
 }
 
 #dark-mode {
-    border: 0;
+    background: var(--bg-lighter);
     border-radius: 10px;
-    padding: 1rem;
+    box-shadow: var(--shadow-s);
+    padding: .5rem;
+    width: 40px;
+    height: 40px;
     transition: .5s ease;
-    outline: 0;
-}
-
-.light-mode #dark-mode {
-    background-color: #ededed;
-}
-
-.dark-mode #dark-mode {
-    background-color: #262424;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    fill: var(--body-text);
+    cursor: pointer;
 }
 
 #dark-mode:hover {
-    transform: rotate(-180deg);
+    box-shadow: var(--shadow-l);
 }
 
 .toggler-wrapper {
@@ -336,25 +503,13 @@ label {
 
 .menu-toggler {
     width: 40px;
+    fill: var(--bg-lighter);
+    opacity: .5;
     height: 40px;
     transition: .5s ease;
 }
 
-.light-mode .menu-toggler {
-    fill: #000;
-    opacity: .5;
-}
-
-.light-mode .menu-toggler:hover {
-    opacity: 1;
-}
-
-.dark-mode .menu-toggler {
-    fill: #fff;
-    opacity: .5;
-}
-
-.dark-mode .menu-toggler:hover {
+.menu-toggler:hover {
     opacity: 1;
 }
 
@@ -371,16 +526,11 @@ label {
     transition: all .5s ease;
     padding: .8rem 1rem;
     border-radius: 5px;
+    color: var(--body-text);
 }
 
-.light-mode .nav li:hover {
-    background-color: #f3f4f6;
-    color: #000;
-}
-
-.dark-mode .nav li:hover {
-    background-color: #374151;
-    color: #fff;
+.nav li:hover {
+    background-color: var(--bg-hover);
 }
 
 .collapsible {
@@ -509,14 +659,8 @@ label {
 
 .profile-img {
     width: 150px;
-    height: 150px;
-    margin: 0 auto 2rem;
-    background-color: var(--accent);
+    object-fit: cover;
     border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 5rem;
 }
 
 .bio {
@@ -549,3 +693,4 @@ label {
     font-size: 1.6rem;
     font-family: 'Roboto', sans-serif;
 }
+
