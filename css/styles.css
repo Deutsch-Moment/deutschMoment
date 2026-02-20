@@ -259,9 +259,13 @@ label {
 }
 
 /* Contact Page */
+#contact {
+    display: none;
+}
 
 .contact {
     padding: 2rem;
+    margin-top: 7rem;
     gap: 4rem;
 }
 
@@ -329,6 +333,10 @@ label {
 }
 
 /* Course Card */
+
+#courses {
+    display: none;
+}
 
 .courses {
     padding: 2rem;
@@ -530,21 +538,32 @@ label {
     gap: 1rem;
 }
 
-.logo span {
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--heading);
+.logo-icon-wrapper {
+    width: 50px; 
+    height: 50px;
 }
 
-.logo div {
-    display: inline-block;
+.logo-icon-wrapper > img {
+    width: 100%;
+    object-fit: cover;
 }
 
-.logo div span {
-    color: var(--accent) !important;
+.logo-line {
     font-size: 2.4rem;
     display: block;
+    font-weight: 700;
     line-height: 1;
+}
+
+.logo-line:first-child {
+    color: var(--accent-secondary);
+}
+.light .logo-line:first-child {
+    color: var(--body-text);
+}
+
+.logo-line:last-child {
+    color: var(--accent);
 }
 
 .buttons-container {
@@ -665,6 +684,10 @@ label {
 
 /* Homepage Hero Section */
 
+#home {
+    display: block;
+}
+
 .block-hero {
     margin-top: 10rem;
     text-align: center;
@@ -774,10 +797,11 @@ label {
 /* Course Page */
 
 #courses-page {
-    margin-top: 7rem;
+    display: none;
 }
 
 .courses-heading {
+    margin-top: 7rem;
     text-align: center;
 }
 
@@ -791,7 +815,7 @@ label {
     color: hsl(0, 0%, 100%);
     padding: 4rem 2rem;
     text-align: center;
-    margin-top: 10rem;
+    margin-top: 7rem;
 }
 
 .light .courses-hero {
