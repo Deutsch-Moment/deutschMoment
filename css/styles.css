@@ -503,7 +503,7 @@ label {
 
 .menu-toggler {
     width: 40px;
-    fill: var(--bg-lighter);
+    fill: var(--body-text);
     opacity: .5;
     height: 40px;
     transition: .5s ease;
@@ -586,7 +586,7 @@ label {
     }
 }
 
-/* Hero Section */
+/* Homepage Hero Section */
 
 .block-hero {
     margin-top: 10rem;
@@ -693,4 +693,57 @@ label {
     font-size: 1.6rem;
     font-family: 'Roboto', sans-serif;
 }
+
+/* Course Page */
+
+#courses-page {
+    margin-top: 7rem;
+}
+
+.courses-heading {
+    text-align: center;
+}
+
+/* Courses Hero */ 
+
+.courses-hero {
+    background: linear-gradient(to right,
+     rgba(0, 0, 0, .8) 55%, 
+     rgba(128, 0, 0, 0.4) 100%),
+     url('../img/building-with-columns.webp') center top / cover no-repeat;
+    color: hsl(0, 0%, 100%);
+    padding: 4rem 2rem;
+    text-align: center;
+    margin-top: 10rem;
+}
+
+.light .courses-hero {
+    background: linear-gradient(to right, 
+        rgba(0, 0, 0, .6) 55%,
+        rgba(128, 0, 0, 0.4) 100%),
+     url('../img/building-with-columns.webp') center top / cover no-repeat;
+}
+
+.courses-hero h1 {
+    letter-spacing: -2%;
+}
+
+.courses-hero .subheading {
+    color: var(--accent-secondary);
+    font-weight: 500;
+    font-size: clamp(2.0rem, 4vw, 3.2rem);
+    letter-spacing: -1.5%;
+}
+
+.courses-hero p {
+    max-width: 700px;
+}
+
+@media screen and (min-width: 768px) {
+    .courses-hero {
+        text-align: start;
+    }
+}
+
+
 
