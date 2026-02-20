@@ -15,15 +15,31 @@
     <link rel="stylesheet" href="css/styles.css" />
     <script src="js/main.js" defer></script>
   </head>
-  <body class="light-mode">
+  <body>
     <nav class="nav">
       <div class="container">
         <div class="logo">
-          <span>DE</span>
-          <div><span>Deutsch</span><span>Moment</span></div>
+          <span class="logo-icon-wrapper">
+            <img src="img/300.png" alt="">
+          </span>
+          <div><span class="logo-line">Deutsch</span><span class="logo-line">Moment</span></div>
         </div>
         <div class="buttons-container">
-          <button id="dark-mode">🌙</button>
+          <div id="dark-mode">
+            <?xml version="1.0" encoding="utf-8"?>
+            <svg
+              width="800px"
+              height="800px"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M13 3C13 2.44772 12.5523 2 12 2C11.4477 2 11 2.44772 11 3V12C11 12.5523 11.4477 13 12 13C12.5523 13 13 12.5523 13 12V3ZM8.6092 5.8744C9.09211 5.60643 9.26636 4.99771 8.99839 4.5148C8.73042 4.03188 8.12171 3.85763 7.63879 4.1256C4.87453 5.65948 3 8.61014 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 8.66747 19.1882 5.75928 16.5007 4.20465C16.0227 3.92811 15.4109 4.09147 15.1344 4.56953C14.8579 5.04759 15.0212 5.65932 15.4993 5.93586C17.5942 7.14771 19 9.41027 19 12C19 15.866 15.866 19 12 19C8.13401 19 5 15.866 5 12C5 9.3658 6.45462 7.06997 8.6092 5.8744Z"
+              />
+            </svg>
+          </div>
           <div class="toggler-wrapper" id="navMenuToggler">
             <svg
               class="menu-toggler"
@@ -41,14 +57,13 @@
           </div>
         </div>
         <ul class="list--vertical collapsible">
-          <li class="link-active"><a href="">Home</a></li>
-          <li><a href="">Courses</a></li>
-          <li><a href="">Certificates</a></li>
-          <li><a href="">Contact</a></li>
+          <li class="link-active"><a href="#home">Home</a></li>
+          <li><a href="#courses">Courses</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
     </nav>
-    <section>
+    <section id="home" class="display-block">
       <div class="block-hero grid grid--1x2 container">
         <div class="hero-content">
           <h1 class="hero__title heading">Welcome to DeutschMoment</h1>
@@ -70,8 +85,6 @@
           />
         </div>
       </div>
-    </section>
-    <section>
       <div class="about-section container grid grid--1x2">
         <div class="stat-section">
           <h2 class="heading">About Me</h2>
@@ -97,14 +110,24 @@
         </div>
         <div class="instructor-card block">
           <h3 class="heading">Course Instructor</h3>
-          <div class="profile-img">🧑‍🏫</div>
+          <picture>
+            <source
+              type="image/webp"
+              srcset="img/profile_img@1x.webp 1x, img/profile_img@2x.webp 2x"
+            />
+            <source
+              type="image/png"
+              srcset="img/profile_img@1x.png 1x, img/profile_img@2x.png 2x"
+            />
+            <img class="profile-img" src="img/profile_img@1x.png" alt="" />
+          </picture>
           <h4 class="instructor-name heading">Omid Sarabi</h4>
           <div class="bio">
-            <p>PhD in German Linguistics from University of Berlin</p>
+            <p>Bachelor in German Linguistics from University of Kabul</p>
             <ul class="achievments list--vertical">
               <li>✓ TestDaF Certificate</li>
               <li>✓ Goethe Institute Certificate</li>
-              <li>✓ 10+ Years Teaching Experience</li>
+              <li>✓ 5+ Years Teaching Experience</li>
             </ul>
           </div>
         </div>
@@ -132,6 +155,474 @@
             <p class="feature__desc">
               Maximum 8 people per class for more attention
             </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="courses">
+      <div class="courses-hero container">
+        <h1>Sprechen Sie Deutsch?</h1>
+        <p class="subheading">Learn German from A1 to C2</p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora cum
+          consectetur architecto impedit non alias. Quod nostrum dolorem
+          molestiae quasi.
+        </p>
+      </div>
+      <h3 class="courses-heading heading">choose Your Level</h3>
+      <div class="courses container">
+        <div class="card">
+          <header class="card__header">
+            <div class="card__icon-wrapper">
+              <i class="fa-solid fa-book"></i>
+            </div>
+            <div>
+              <h2 class="card__level">A1</h2>
+              <span class="card__badge">Elementary</span>
+              <p class="card__subtitle">
+                Introduction to German labguage basics
+              </p>
+            </div>
+          </header>
+          <div class="card__stats">
+            <div class="course-stat">
+              <span class="course-stat__icon"
+                ><i class="fa-solid fa-clock"></i
+              ></span>
+              <div class="course-stat__info">
+                <span class="course-stat__label">Duration</span>
+                <span class="course-stat__value">10 weeks</span>
+              </div>
+            </div>
+            <div class="course-stat">
+              <span class="course-stat__icon"
+                ><i class="fa-solid fa-bullseye"></i
+              ></span>
+              <div class="course-stat__info">
+                <span class="course-stat__label">price</span>
+                <span class="course-stat__value">3000Af</span>
+              </div>
+            </div>
+          </div>
+          <button class="card-cta btn btn--accent btn--block">
+            View Details
+          </button>
+          <div class="card__details">
+            <h3 class="heading">Learning Objectives</h3>
+            <ul class="course-objectives list--vertical">
+              <li>Introduce yourself and engage in basic conversations</li>
+              <li>Understand and use familiar everyday expressions</li>
+              <li>Ask and answer simple questions about personal details</li>
+              <li>Master basic German pronunciation and alphabet</li>
+            </ul>
+            <h3 class="heading">Course Topics</h3>
+            <ul class="course-topics list--vertical">
+              <li class="block">German alphabet and pronunciation</li>
+              <li class="block">Basic greetings and introductions</li>
+              <li class="block">Numbers, dates, and telling time</li>
+              <li class="block">Ordering food and shopping basics</li>
+              <li class="block">Describing family and daily routines</li>
+            </ul>
+            <h3 class="heading">What's Included</h3>
+            <ul class="course-includes list--vertical">
+              <li>Weekly quizzes</li>
+              <li>Interactive exercises</li>
+              <li>Audio pronunciation</li>
+              <li>Course certificate</li>
+            </ul>
+            <a
+              class="btn btn--accent btn--block"
+              href="https://wa.me/93786370347"
+              target="_blank"
+              >Enroll via WhatsApp</a
+            >
+          </div>
+        </div>
+        <div class="card">
+          <header class="card__header">
+            <div class="card__icon-wrapper">
+              <i class="fa-solid fa-book"></i>
+            </div>
+            <div>
+              <h2 class="card__level">A1</h2>
+              <span class="card__badge">Elementary</span>
+              <p class="card__subtitle">
+                Introduction to German labguage basics
+              </p>
+            </div>
+          </header>
+          <div class="card__stats">
+            <div class="course-stat">
+              <span class="course-stat__icon"
+                ><i class="fa-solid fa-clock"></i
+              ></span>
+              <div class="course-stat__info">
+                <span class="course-stat__label">Duration</span>
+                <span class="course-stat__value">10 weeks</span>
+              </div>
+            </div>
+            <div class="course-stat">
+              <span class="course-stat__icon"
+                ><i class="fa-solid fa-bullseye"></i
+              ></span>
+              <div class="course-stat__info">
+                <span class="course-stat__label">price</span>
+                <span class="course-stat__value">3000Af</span>
+              </div>
+            </div>
+          </div>
+          <button class="card-cta btn btn--accent btn--block">
+            View Details
+          </button>
+          <div class="card__details">
+            <h3 class="heading">Learning Objectives</h3>
+            <ul class="course-objectives list--vertical">
+              <li>Introduce yourself and engage in basic conversations</li>
+              <li>Understand and use familiar everyday expressions</li>
+              <li>Ask and answer simple questions about personal details</li>
+              <li>Master basic German pronunciation and alphabet</li>
+            </ul>
+            <h3 class="heading">Course Topics</h3>
+            <ul class="course-topics list--vertical">
+              <li class="block">German alphabet and pronunciation</li>
+              <li class="block">Basic greetings and introductions</li>
+              <li class="block">Numbers, dates, and telling time</li>
+              <li class="block">Ordering food and shopping basics</li>
+              <li class="block">Describing family and daily routines</li>
+            </ul>
+            <h3 class="heading">What's Included</h3>
+            <ul class="course-includes list--vertical">
+              <li>Weekly quizzes</li>
+              <li>Interactive exercises</li>
+              <li>Audio pronunciation</li>
+              <li>Course certificate</li>
+            </ul>
+            <a
+              class="btn btn--accent btn--block"
+              href="https://wa.me/93786370347"
+              target="_blank"
+              >Enroll via WhatsApp</a
+            >
+          </div>
+        </div>
+        <div class="card">
+          <header class="card__header">
+            <div class="card__icon-wrapper">
+              <i class="fa-solid fa-book"></i>
+            </div>
+            <div>
+              <h2 class="card__level">A1</h2>
+              <span class="card__badge">Elementary</span>
+              <p class="card__subtitle">
+                Introduction to German labguage basics
+              </p>
+            </div>
+          </header>
+          <div class="card__stats">
+            <div class="course-stat">
+              <span class="course-stat__icon"
+                ><i class="fa-solid fa-clock"></i
+              ></span>
+              <div class="course-stat__info">
+                <span class="course-stat__label">Duration</span>
+                <span class="course-stat__value">10 weeks</span>
+              </div>
+            </div>
+            <div class="course-stat">
+              <span class="course-stat__icon"
+                ><i class="fa-solid fa-bullseye"></i
+              ></span>
+              <div class="course-stat__info">
+                <span class="course-stat__label">price</span>
+                <span class="course-stat__value">3000Af</span>
+              </div>
+            </div>
+          </div>
+          <button class="card-cta btn btn--accent btn--block">
+            View Details
+          </button>
+          <div class="card__details">
+            <h3 class="heading">Learning Objectives</h3>
+            <ul class="course-objectives list--vertical">
+              <li>Introduce yourself and engage in basic conversations</li>
+              <li>Understand and use familiar everyday expressions</li>
+              <li>Ask and answer simple questions about personal details</li>
+              <li>Master basic German pronunciation and alphabet</li>
+            </ul>
+            <h3 class="heading">Course Topics</h3>
+            <ul class="course-topics list--vertical">
+              <li class="block">German alphabet and pronunciation</li>
+              <li class="block">Basic greetings and introductions</li>
+              <li class="block">Numbers, dates, and telling time</li>
+              <li class="block">Ordering food and shopping basics</li>
+              <li class="block">Describing family and daily routines</li>
+            </ul>
+            <h3 class="heading">What's Included</h3>
+            <ul class="course-includes list--vertical">
+              <li>Weekly quizzes</li>
+              <li>Interactive exercises</li>
+              <li>Audio pronunciation</li>
+              <li>Course certificate</li>
+            </ul>
+            <a
+              class="btn btn--accent btn--block"
+              href="https://wa.me/93786370347"
+              target="_blank"
+              >Enroll via WhatsApp</a
+            >
+          </div>
+        </div>
+        <div class="card">
+          <header class="card__header">
+            <div class="card__icon-wrapper">
+              <i class="fa-solid fa-book"></i>
+            </div>
+            <div>
+              <h2 class="card__level">A1</h2>
+              <span class="card__badge">Elementary</span>
+              <p class="card__subtitle">
+                Introduction to German labguage basics
+              </p>
+            </div>
+          </header>
+          <div class="card__stats">
+            <div class="course-stat">
+              <span class="course-stat__icon"
+                ><i class="fa-solid fa-clock"></i
+              ></span>
+              <div class="course-stat__info">
+                <span class="course-stat__label">Duration</span>
+                <span class="course-stat__value">10 weeks</span>
+              </div>
+            </div>
+            <div class="course-stat">
+              <span class="course-stat__icon"
+                ><i class="fa-solid fa-bullseye"></i
+              ></span>
+              <div class="course-stat__info">
+                <span class="course-stat__label">price</span>
+                <span class="course-stat__value">3000Af</span>
+              </div>
+            </div>
+          </div>
+          <button class="card-cta btn btn--accent btn--block">
+            View Details
+          </button>
+          <div class="card__details">
+            <h3 class="heading">Learning Objectives</h3>
+            <ul class="course-objectives list--vertical">
+              <li>Introduce yourself and engage in basic conversations</li>
+              <li>Understand and use familiar everyday expressions</li>
+              <li>Ask and answer simple questions about personal details</li>
+              <li>Master basic German pronunciation and alphabet</li>
+            </ul>
+            <h3 class="heading">Course Topics</h3>
+            <ul class="course-topics list--vertical">
+              <li class="block">German alphabet and pronunciation</li>
+              <li class="block">Basic greetings and introductions</li>
+              <li class="block">Numbers, dates, and telling time</li>
+              <li class="block">Ordering food and shopping basics</li>
+              <li class="block">Describing family and daily routines</li>
+            </ul>
+            <h3 class="heading">What's Included</h3>
+            <ul class="course-includes list--vertical">
+              <li>Weekly quizzes</li>
+              <li>Interactive exercises</li>
+              <li>Audio pronunciation</li>
+              <li>Course certificate</li>
+            </ul>
+            <a
+              class="btn btn--accent btn--block"
+              href="https://wa.me/93786370347"
+              target="_blank"
+              >Enroll via WhatsApp</a
+            >
+          </div>
+        </div>
+        <div class="card">
+          <header class="card__header">
+            <div class="card__icon-wrapper">
+              <i class="fa-solid fa-book"></i>
+            </div>
+            <div>
+              <h2 class="card__level">A1</h2>
+              <span class="card__badge">Elementary</span>
+              <p class="card__subtitle">
+                Introduction to German labguage basics
+              </p>
+            </div>
+          </header>
+          <div class="card__stats">
+            <div class="course-stat">
+              <span class="course-stat__icon"
+                ><i class="fa-solid fa-clock"></i
+              ></span>
+              <div class="course-stat__info">
+                <span class="course-stat__label">Duration</span>
+                <span class="course-stat__value">10 weeks</span>
+              </div>
+            </div>
+            <div class="course-stat">
+              <span class="course-stat__icon"
+                ><i class="fa-solid fa-bullseye"></i
+              ></span>
+              <div class="course-stat__info">
+                <span class="course-stat__label">price</span>
+                <span class="course-stat__value">3000Af</span>
+              </div>
+            </div>
+          </div>
+          <button class="card-cta btn btn--accent btn--block">
+            View Details
+          </button>
+          <div class="card__details">
+            <h3 class="heading">Learning Objectives</h3>
+            <ul class="course-objectives list--vertical">
+              <li>Introduce yourself and engage in basic conversations</li>
+              <li>Understand and use familiar everyday expressions</li>
+              <li>Ask and answer simple questions about personal details</li>
+              <li>Master basic German pronunciation and alphabet</li>
+            </ul>
+            <h3 class="heading">Course Topics</h3>
+            <ul class="course-topics list--vertical">
+              <li class="block">German alphabet and pronunciation</li>
+              <li class="block">Basic greetings and introductions</li>
+              <li class="block">Numbers, dates, and telling time</li>
+              <li class="block">Ordering food and shopping basics</li>
+              <li class="block">Describing family and daily routines</li>
+            </ul>
+            <h3 class="heading">What's Included</h3>
+            <ul class="course-includes list--vertical">
+              <li>Weekly quizzes</li>
+              <li>Interactive exercises</li>
+              <li>Audio pronunciation</li>
+              <li>Course certificate</li>
+            </ul>
+            <a
+              class="btn btn--accent btn--block"
+              href="https://wa.me/93786370347"
+              target="_blank"
+              >Enroll via WhatsApp</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="contact">
+      <div class="contact container">
+        <div class="contact__form block">
+          <h3 class="contact__form__title">Get in Touch</h3>
+          <form action="">
+            <div class="input-row">
+              <div class="input-group">
+                <label for="user-name" class="label">Name</label>
+                <input
+                  type="text"
+                  id="user-name"
+                  name="name"
+                  class="input"
+                  placeholder="Mel"
+                  required
+                />
+              </div>
+              <div class="input-group">
+                <label for="user-phone-number" class="label">Phone</label>
+                <input
+                  type="tel"
+                  id="user-phone-number"
+                  class="input"
+                  name="phoneNumber"
+                  inputmode="tel"
+                  placeholder="Your phone number"
+                  required
+                />
+              </div>
+            </div>
+            <div class="input-group">
+              <label for="user-email" class="label">E-mail</label>
+              <input
+                type="email"
+                id="user-email"
+                name="email"
+                class="input"
+                inputmode="email"
+                placeholder="hello@example.com"
+                required
+              />
+            </div>
+            <div class="input-group">
+              <label for="user-subject" class="label">Subject</label>
+              <input
+                type="text"
+                id="user-subject"
+                name="subject"
+                class="input"
+                placeholder="How can I help?"
+                required
+              />
+            </div>
+            <div class="input-group">
+              <label for="user-message" class="label">Message</label>
+              <textarea
+                name="message"
+                id="user-message"
+                class="input"
+                rows="5"
+                placeholder="Tell us about your inquiry."
+                required
+              ></textarea>
+            </div>
+            <button
+              type="submit"
+              id="submit-button"
+              class="btn btn--accent btn--block"
+            >
+              Send Message
+            </button>
+          </form>
+        </div>
+        <div>
+          <div class="contact__info block">
+            <h3 class="contact__info__title">Contact Information</h3>
+            <div class="info-item">
+              <div class="card__icon-wrapper">
+                <i class="fa-solid fa-envelope"></i>
+              </div>
+              <div class="info">
+                <p class="info-title">Email:</p>
+                <p>dment@gmail.com</p>
+              </div>
+            </div>
+            <div class="info-item">
+              <div class="card__icon-wrapper">
+                <i class="fa-solid fa-phone"></i>
+              </div>
+              <div class="info">
+                <p class="info-title">Phone:</p>
+                <p>07888888888</p>
+              </div>
+            </div>
+            <div class="info-item">
+              <div class="card__icon-wrapper">
+                <i class="fa-solid fa-clock"></i>
+              </div>
+              <div class="info">
+                <p class="info-title">Working Hours:</p>
+                <p>Sunday to Thursday: 06:00 - 22:00</p>
+              </div>
+            </div>
+            <div class="info-item">
+              <div class="card__icon-wrapper">
+                <i class="fa-solid fa-link"></i>
+              </div>
+              <div class="info">
+                <p class="info-title">Social Links:</p>
+                <div class="social-links">
+                  <a href=""><i class="fa-brands fa-facebook fa-2x"></i></a>
+                  <a href=""><i class="fa-brands fa-whatsapp fa-2x"></i></a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
