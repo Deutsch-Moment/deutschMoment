@@ -63,7 +63,7 @@ html {
 /* Typography */
 
 body {
-    background: var(--bg);
+    background: var(--bg-darker);
     color: var(--body-text);
     font-family: Montserrat, sans-serif;
     font-size: clamp(1.6rem, 1.5vw, 2.0rem);
@@ -213,15 +213,11 @@ ul {
 
 /* Inputs */
 
-.input-group {
-    text-align: start;
-}
-
 .input {
-    background-color: var(--bg-lighter);
+    background-color: var(--bg);
     border-radius: 8px;
-    border: 1px solid #000;
-    caret-color: var(--accent-secondary);
+    border: 1px solid hsl(0, 0%, 15%);
+    caret-color: var(--heading);
     color: var(--body-text);
     font-size: 1.6rem;
     margin-bottom: 3rem;
@@ -249,6 +245,89 @@ label {
     font-family: 'Roboto', sans-serif;
 }
 
+/* Input Group */
+
+.input-group {
+    text-align: start;
+}
+
+@media screen and (min-width: 768px) {
+    .input-row {
+        display: flex;
+        gap: 2rem;
+    }
+}
+
+/* Contact Page */
+
+.contact {
+    padding: 2rem;
+    gap: 4rem;
+}
+
+.contact .block{
+    background-color: var(--bg);
+}
+
+.contact__info {
+    padding: 3rem;
+    text-align: start;
+}
+
+.contact__info__title {
+    margin-bottom: 4rem;
+}
+
+.info-item {
+    display: flex;
+    gap: 2rem;
+    align-items: start;
+    margin-bottom: 3rem;
+    color: var(--body-text--mute);
+}
+
+.info-title {
+    color: var(--heading);
+    margin-bottom: 0;
+}
+
+.contact__form {
+    padding: 3rem;
+    margin-bottom: 3rem;
+}
+
+.contact__form__title {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.social-links {
+    margin-top: .8rem;
+    width: fit-content;
+}
+
+.social-links a {
+    transition: color .3s ease;
+    color: var(--body-text);
+    margin: 0rem 2rem 2rem 0;
+}
+
+.social-links a:first-child:hover {
+    color: hsl(217, 100%, 51%);
+}
+
+.social-links a:last-child:hover {
+    color: hsl(142, 70%, 49%);
+}
+
+@media screen and (min-width: 768px) {
+    .contact {
+        display: flex;
+        justify-content: center;
+        align-items: start;
+    }
+}
+
 /* Course Card */
 
 .courses {
@@ -260,8 +339,6 @@ label {
     justify-items: center;
     align-items: start;
 }
-
-
 
 .card {
     padding: 2rem;
@@ -744,6 +821,3 @@ label {
         text-align: start;
     }
 }
-
-
-
