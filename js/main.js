@@ -58,6 +58,12 @@ ctaBtns.forEach(btn => {
     });
 });
 
+// logo
+document.getElementById('logo').addEventListener('click', (e) => {
+    e.preventDefault();
+    setActivePage('#home');
+})
+
 cards.forEach(card => {
     card.addEventListener('click', (e) => {
         if (!e.target.classList.contains('card-cta')) return;
