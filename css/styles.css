@@ -1,6 +1,13 @@
+/*
+    styles.css
+    Project: Deutsch_Moment
+    Author: Milad Sarabi
+    Purpose: Core styles for the DeutschMoment landing pages. Cleaned for GitHub publishing.
+    Notes: Remove or secure any private keys before publishing. License: MIT.
+*/
+
 :root {
-    /* GERMAN THEME UPDATES */
-    --accent: hsl(0, 100%, 43%);        
+    --accent: hsl(0, 100%, 43%);
     --accent-darker: hsl(0, 55%, 8%);
     --accent-secondary:hsl(48, 100%, 50%);
     --accent-secondary-darker: hsl(48, 76%, 13%);
@@ -31,7 +38,7 @@
 }
 
 body.light {
-    /* ACCENDT COLORS */
+    /* ACCENT COLORS */
     --accent-darker: hsl(0, 79%, 94%);
     --accent-secondary-darker: hsl(48, 100%, 90%);
     /* LIGHT MODE */
@@ -316,12 +323,8 @@ label {
     margin: 0rem 2rem 2rem 0;
 }
 
-.social-links a:first-child:hover {
-    color: hsl(217, 100%, 51%);
-}
-
-.social-links a:last-child:hover {
-    color: hsl(142, 70%, 49%);
+.social-links a:hover {
+    color: var(--accent);
 }
 
 @media screen and (min-width: 768px) {
@@ -374,7 +377,7 @@ label {
 .card__header {
     border-top-right-radius: 20px;
     border-top-left-radius: 20px;
-    padding: 2rem 2rem 0;
+    padding: 2rem 0 0 2rem;
     font-size: 1.4rem;
     display: flex;
     flex: 20% 80%;
@@ -395,7 +398,7 @@ label {
 
 .card__level {
     font-size: 1.8rem;
-    margin: 0 1rem 0 0;
+    /* margin: 0 1rem 0 0; */
     display: inline;
 }
 
@@ -405,6 +408,8 @@ label {
     border-radius: 5px;
     color: var(--accent-secondary);
     font-family: 'Roboto',sans-serif;
+    margin-left: 1rem;
+    text-wrap: nowrap;
 }
 
 .light .card__badge {

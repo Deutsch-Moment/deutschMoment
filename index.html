@@ -3,33 +3,53 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Deutsch Moment - Where it all make sense</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
+    <!--
+      Project: Deutsch_Moment
+      Author: Milad Sarabi
+      Purpose: Landing page for DeutschMoment — German language courses (A1–C1).
+      Notes: Cleaned for GitHub publishing. Remove or update access keys before public release.
+      License: MIT (add LICENSE file to repo if you choose a different license)
+    -->
+    <title>Deutsch Moment | Learn German A1-C1 | Expert Exam Prep</title>
+    <meta
+      name="title"
+      content="Deutsch Moment | Learn German A1-C1 | Expert Exam Prep"
     />
+    <meta
+      name="description"
+      content="Master the German language with Omid Sarabi. Specialized courses from A1 to C1, Goethe/TestDaF exam preparation, and small classes for personalized learning. Start your journey today!"
+    />
+    <meta
+      name="keywords"
+      content="learn german, german language course, Goethe exam preparation, TestDaF prep, German A1-C1, Omid Sarabi, German linguistics Kabul, study in Germany"
+    />
+    <meta name="author" content="Omid Sarabi" />
+    <meta name="robots" content="index, follow" />
+
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
     <script src="js/main.js" defer></script>
   </head>
   <body>
     <nav class="nav">
       <div class="container">
-        <div class="logo">
-          <span class="logo-icon-wrapper">
-            <img src="img/300.png" alt="">
-          </span>
-          <div><span class="logo-line">Deutsch</span><span class="logo-line">Moment</span></div>
-        </div>
+        <a href="#">
+          <div class="logo">
+            <span class="logo-icon-wrapper">
+              <img src="img/300.png" alt="" />
+            </span>
+            <div>
+              <span class="logo-line">Deutsch</span
+              ><span class="logo-line">Moment</span>
+            </div>
+          </div>
+        </a>
         <div class="buttons-container">
           <div id="dark-mode">
             <?xml version="1.0" encoding="utf-8"?>
             <svg
               width="800px"
-              height="800px"
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
             >
@@ -63,22 +83,25 @@
         </ul>
       </div>
     </nav>
-    <section id="home" class="display-block">
+    <section id="home" class="page">
       <div class="block-hero grid grid--1x2 container">
         <div class="hero-content">
-          <h1 class="hero__title heading">Welcome to DeutschMoment</h1>
-          <p class="hero__description">
+          <h1 class="hero__title heading" data-aos="fade-up">
+            Welcome to DeutschMoment
+          </h1>
+          <p class="hero__description" data-aos="fade-up">
             Specialized German language learning center with over 5 years of
             experience in teaching and preparing students for international
             exams
           </p>
           <div class="buttons-container">
-            <button class="btn btn--accent">View Courses</button>
-            <button class="btn btn--outline">Contact Us</button>
+            <a href="#courses" class="btn btn--accent">View Courses</a>
+            <a href="#contact" class="btn btn--outline">Contact Us</a>
           </div>
         </div>
         <div class="hero-image-wrapper">
           <img
+            data-aos="fade-left"
             class="hero-banner"
             src="https://www.stadtrundfahrt.com/upload/system/experience/0a5e0d62a1ea15ae2346db69701c6f58.jpg"
             alt="Neuschwanstein Castle"
@@ -98,17 +121,29 @@
             latest teaching methods and accredited textbooks.
           </p>
           <div class="stats">
-            <div class="stat-card block">
+            <div
+              class="stat-card block"
+              data-aos="zoom-in"
+              data-aos-delay="100"
+            >
               <div class="stat-card__number">500+</div>
               <p class="stat-card__label">Students</p>
             </div>
-            <div class="stat-card block">
+            <div
+              class="stat-card block"
+              data-aos="zoom-in"
+              data-aos-delay="100"
+            >
               <div class="stat-card__number">5+</div>
               <p class="stat-card__label">Years</p>
             </div>
           </div>
         </div>
-        <div class="instructor-card block">
+        <div
+          class="instructor-card block"
+          data-aos="fade-right"
+          data-aos-delay="100"
+        >
           <h3 class="heading">Course Instructor</h3>
           <picture>
             <source
@@ -119,13 +154,16 @@
               type="image/png"
               srcset="img/profile_img@1x.png 1x, img/profile_img@2x.png 2x"
             />
-            <img class="profile-img" src="img/profile_img@1x.png" alt="" />
+            <img
+              class="profile-img"
+              src="img/profile_img@1x.png"
+              alt="Omid Sarabi - German Language Instructor"
+            />
           </picture>
           <h4 class="instructor-name heading">Omid Sarabi</h4>
           <div class="bio">
             <p>Bachelor in German Linguistics from University of Kabul</p>
             <ul class="achievments list--vertical">
-              <li>✓ TestDaF Certificate</li>
               <li>✓ Goethe Institute Certificate</li>
               <li>✓ 5+ Years Teaching Experience</li>
             </ul>
@@ -135,21 +173,21 @@
       <div class="featured container">
         <h3 class="heading">Features of Our Courses</h3>
         <div class="features-container">
-          <div class="feature block">
+          <div class="feature block" data-aos="fade-up" data-aos-delay="100">
             <div class="feature__icon">📚</div>
             <h4 class="heading">Accredited Textbooks</h4>
             <p class="feature__desc">
               Using the latest Netzwerk and Menschen books
             </p>
           </div>
-          <div class="feature block">
+          <div class="feature block" data-aos="fade-up" data-aos-delay="100">
             <div class="feature__icon">🎯</div>
             <h4 class="heading">Exam Preparation</h4>
             <p class="feature__desc">
               Complete preparation for TestDaF and Goethe exams
             </p>
           </div>
-          <div class="feature block">
+          <div class="feature block" data-aos="fade-up" data-aos-delay="100">
             <div class="feature__icon">👥</div>
             <h4 class="heading">Small Classes</h4>
             <p class="feature__desc">
@@ -159,14 +197,17 @@
         </div>
       </div>
     </section>
-    <section id="courses">
+    <section id="courses" class="page">
       <div class="courses-hero container">
-        <h1>Sprechen Sie Deutsch?</h1>
-        <p class="subheading">Learn German from A1 to C2</p>
+        <h1>Sprichst du Deutsch?</h1>
+        <p class="subheading">
+          Learn German from A1 to C1
+        </p>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora cum
-          consectetur architecto impedit non alias. Quod nostrum dolorem
-          molestiae quasi.
+          Unlock new opportunities in Germany and beyond. We take you from a
+          complete beginner to a confident, proficient speaker. With expert-led
+          modules covering every level from A1 to C1, your 'Deutsch Moment' is
+          here. Join our community and speak with confidence today.
         </p>
       </div>
       <h3 class="courses-heading heading">choose Your Level</h3>
@@ -178,9 +219,9 @@
             </div>
             <div>
               <h2 class="card__level">A1</h2>
-              <span class="card__badge">Elementary</span>
+              <span class="card__badge">Beginner</span>
               <p class="card__subtitle">
-                Introduction to German labguage basics
+                Start your German journey from scratch
               </p>
             </div>
           </header>
@@ -191,7 +232,7 @@
               ></span>
               <div class="course-stat__info">
                 <span class="course-stat__label">Duration</span>
-                <span class="course-stat__value">10 weeks</span>
+                <span class="course-stat__value">12 weeks</span>
               </div>
             </div>
             <div class="course-stat">
@@ -200,7 +241,7 @@
               ></span>
               <div class="course-stat__info">
                 <span class="course-stat__label">price</span>
-                <span class="course-stat__value">3000Af</span>
+                <span class="course-stat__value">2000Af</span>
               </div>
             </div>
           </div>
@@ -234,7 +275,7 @@
               class="btn btn--accent btn--block"
               href="https://wa.me/93786370347"
               target="_blank"
-              >Enroll via WhatsApp</a
+              >Enroll in German A1 via WhatsApp</a
             >
           </div>
         </div>
@@ -244,11 +285,9 @@
               <i class="fa-solid fa-book"></i>
             </div>
             <div>
-              <h2 class="card__level">A1</h2>
+              <h2 class="card__level">A2</h2>
               <span class="card__badge">Elementary</span>
-              <p class="card__subtitle">
-                Introduction to German labguage basics
-              </p>
+              <p class="card__subtitle">Build on your basic German skills</p>
             </div>
           </header>
           <div class="card__stats">
@@ -258,7 +297,7 @@
               ></span>
               <div class="course-stat__info">
                 <span class="course-stat__label">Duration</span>
-                <span class="course-stat__value">10 weeks</span>
+                <span class="course-stat__value">12 weeks</span>
               </div>
             </div>
             <div class="course-stat">
@@ -267,7 +306,7 @@
               ></span>
               <div class="course-stat__info">
                 <span class="course-stat__label">price</span>
-                <span class="course-stat__value">3000Af</span>
+                <span class="course-stat__value">2000Af</span>
               </div>
             </div>
           </div>
@@ -277,18 +316,20 @@
           <div class="card__details">
             <h3 class="heading">Learning Objectives</h3>
             <ul class="course-objectives list--vertical">
-              <li>Introduce yourself and engage in basic conversations</li>
-              <li>Understand and use familiar everyday expressions</li>
-              <li>Ask and answer simple questions about personal details</li>
-              <li>Master basic German pronunciation and alphabet</li>
+              <li>Communicate in simple routine tasks</li>
+              <li>Describe your background, education, and environment</li>
+              <li>Understand common phrases and expressions</li>
+              <li>Express needs and opinions in familiar situations</li>
             </ul>
             <h3 class="heading">Course Topics</h3>
             <ul class="course-topics list--vertical">
-              <li class="block">German alphabet and pronunciation</li>
-              <li class="block">Basic greetings and introductions</li>
-              <li class="block">Numbers, dates, and telling time</li>
-              <li class="block">Ordering food and shopping basics</li>
-              <li class="block">Describing family and daily routines</li>
+              <li class="block">
+                Express needs and opinions in familiar situations
+              </li>
+              <li class="block">Shopping, traveling, and giving directions</li>
+              <li class="block">Describing people, places, and things</li>
+              <li class="block">Talking about hobbies and interests</li>
+              <li class="block">Making plans and appointments</li>
             </ul>
             <h3 class="heading">What's Included</h3>
             <ul class="course-includes list--vertical">
@@ -301,7 +342,7 @@
               class="btn btn--accent btn--block"
               href="https://wa.me/93786370347"
               target="_blank"
-              >Enroll via WhatsApp</a
+              >Enroll in German A2 via WhatsApp</a
             >
           </div>
         </div>
@@ -311,11 +352,9 @@
               <i class="fa-solid fa-book"></i>
             </div>
             <div>
-              <h2 class="card__level">A1</h2>
-              <span class="card__badge">Elementary</span>
-              <p class="card__subtitle">
-                Introduction to German labguage basics
-              </p>
+              <h2 class="card__level">B1</h2>
+              <span class="card__badge">Intermediate</span>
+              <p class="card__subtitle">Achieve conversational fluency</p>
             </div>
           </header>
           <div class="card__stats">
@@ -325,7 +364,7 @@
               ></span>
               <div class="course-stat__info">
                 <span class="course-stat__label">Duration</span>
-                <span class="course-stat__value">10 weeks</span>
+                <span class="course-stat__value">12 weeks</span>
               </div>
             </div>
             <div class="course-stat">
@@ -334,7 +373,7 @@
               ></span>
               <div class="course-stat__info">
                 <span class="course-stat__label">price</span>
-                <span class="course-stat__value">3000Af</span>
+                <span class="course-stat__value">2500Af</span>
               </div>
             </div>
           </div>
@@ -344,18 +383,22 @@
           <div class="card__details">
             <h3 class="heading">Learning Objectives</h3>
             <ul class="course-objectives list--vertical">
-              <li>Introduce yourself and engage in basic conversations</li>
-              <li>Understand and use familiar everyday expressions</li>
-              <li>Ask and answer simple questions about personal details</li>
-              <li>Master basic German pronunciation and alphabet</li>
+              <li>Handle most travel situations in German-speaking areas</li>
+              <li>Produce simple text on familiar topics</li>
+              <li>Describe experiences, dreams, and ambitions</li>
+              <li>Give reasons and explanations for opinions</li>
             </ul>
             <h3 class="heading">Course Topics</h3>
             <ul class="course-topics list--vertical">
-              <li class="block">German alphabet and pronunciation</li>
-              <li class="block">Basic greetings and introductions</li>
-              <li class="block">Numbers, dates, and telling time</li>
-              <li class="block">Ordering food and shopping basics</li>
-              <li class="block">Describing family and daily routines</li>
+              <li class="block">
+                Complex grammar: subjunctive and passive voice
+              </li>
+              <li class="block">
+                Professional communication and job interviews
+              </li>
+              <li class="block">Discussing current events and opinions</li>
+              <li class="block">Writing formal and informal letters</li>
+              <li class="block">Understanding German media and culture</li>
             </ul>
             <h3 class="heading">What's Included</h3>
             <ul class="course-includes list--vertical">
@@ -368,7 +411,7 @@
               class="btn btn--accent btn--block"
               href="https://wa.me/93786370347"
               target="_blank"
-              >Enroll via WhatsApp</a
+              >Enroll in German B1 via WhatsApp</a
             >
           </div>
         </div>
@@ -378,11 +421,9 @@
               <i class="fa-solid fa-book"></i>
             </div>
             <div>
-              <h2 class="card__level">A1</h2>
-              <span class="card__badge">Elementary</span>
-              <p class="card__subtitle">
-                Introduction to German labguage basics
-              </p>
+              <h2 class="card__level">B2</h2>
+              <span class="card__badge">Upper Intermediate</span>
+              <p class="card__subtitle">Master complex German communication</p>
             </div>
           </header>
           <div class="card__stats">
@@ -392,7 +433,7 @@
               ></span>
               <div class="course-stat__info">
                 <span class="course-stat__label">Duration</span>
-                <span class="course-stat__value">10 weeks</span>
+                <span class="course-stat__value">12 weeks</span>
               </div>
             </div>
             <div class="course-stat">
@@ -411,18 +452,18 @@
           <div class="card__details">
             <h3 class="heading">Learning Objectives</h3>
             <ul class="course-objectives list--vertical">
-              <li>Introduce yourself and engage in basic conversations</li>
-              <li>Understand and use familiar everyday expressions</li>
-              <li>Ask and answer simple questions about personal details</li>
-              <li>Master basic German pronunciation and alphabet</li>
+              <li>Understand complex texts on abstract topics</li>
+              <li>Interact fluently with native speakers</li>
+              <li>Produce detailed text on various subjects</li>
+              <li>Explain viewpoints with advantages and disadvantages</li>
             </ul>
             <h3 class="heading">Course Topics</h3>
             <ul class="course-topics list--vertical">
-              <li class="block">German alphabet and pronunciation</li>
-              <li class="block">Basic greetings and introductions</li>
-              <li class="block">Numbers, dates, and telling time</li>
-              <li class="block">Ordering food and shopping basics</li>
-              <li class="block">Describing family and daily routines</li>
+              <li class="block">Advanced grammar and idiomatic expressions</li>
+              <li class="block">Business German and formal correspondence</li>
+              <li class="block">Debating and presenting arguments</li>
+              <li class="block">Understanding literature and films</li>
+              <li class="block">Specialized vocabulary for work and study</li>
             </ul>
             <h3 class="heading">What's Included</h3>
             <ul class="course-includes list--vertical">
@@ -435,7 +476,7 @@
               class="btn btn--accent btn--block"
               href="https://wa.me/93786370347"
               target="_blank"
-              >Enroll via WhatsApp</a
+              >Enroll in German B2 via WhatsApp</a
             >
           </div>
         </div>
@@ -445,11 +486,9 @@
               <i class="fa-solid fa-book"></i>
             </div>
             <div>
-              <h2 class="card__level">A1</h2>
-              <span class="card__badge">Elementary</span>
-              <p class="card__subtitle">
-                Introduction to German labguage basics
-              </p>
+              <h2 class="card__level">C1</h2>
+              <span class="card__badge">Advanced</span>
+              <p class="card__subtitle">Near-native fluency and expertise</p>
             </div>
           </header>
           <div class="card__stats">
@@ -459,7 +498,7 @@
               ></span>
               <div class="course-stat__info">
                 <span class="course-stat__label">Duration</span>
-                <span class="course-stat__value">10 weeks</span>
+                <span class="course-stat__value">12 weeks</span>
               </div>
             </div>
             <div class="course-stat">
@@ -468,7 +507,7 @@
               ></span>
               <div class="course-stat__info">
                 <span class="course-stat__label">price</span>
-                <span class="course-stat__value">3000Af</span>
+                <span class="course-stat__value">4000Af</span>
               </div>
             </div>
           </div>
@@ -478,18 +517,29 @@
           <div class="card__details">
             <h3 class="heading">Learning Objectives</h3>
             <ul class="course-objectives list--vertical">
-              <li>Introduce yourself and engage in basic conversations</li>
-              <li>Understand and use familiar everyday expressions</li>
-              <li>Ask and answer simple questions about personal details</li>
-              <li>Master basic German pronunciation and alphabet</li>
+              <li>Understand demanding, longer texts</li>
+              <li>Express yourself fluently and spontaneously</li>
+              <li>
+                Use language flexibly for social, academic, and professional
+                purposes
+              </li>
+              <li>
+                Produce clear, well-structured, detailed text on complex
+                subjects
+              </li>
             </ul>
             <h3 class="heading">Course Topics</h3>
             <ul class="course-topics list--vertical">
-              <li class="block">German alphabet and pronunciation</li>
-              <li class="block">Basic greetings and introductions</li>
-              <li class="block">Numbers, dates, and telling time</li>
-              <li class="block">Ordering food and shopping basics</li>
-              <li class="block">Describing family and daily routines</li>
+              <li class="block">Understand demanding, longer texts</li>
+              <li class="block">Express yourself fluently and spontaneously</li>
+              <li class="block">
+                Use language flexibly for social, academic, and professional
+                purposes
+              </li>
+              <li class="block">
+                Produce clear, well-structured, detailed text on complex
+                subjects
+              </li>
             </ul>
             <h3 class="heading">What's Included</h3>
             <ul class="course-includes list--vertical">
@@ -502,18 +552,23 @@
               class="btn btn--accent btn--block"
               href="https://wa.me/93786370347"
               target="_blank"
-              >Enroll via WhatsApp</a
+              >Enroll in German C1 via WhatsApp</a
             >
           </div>
         </div>
       </div>
     </section>
-    <section id="contact">
+    <section id="contact" class="page">
       <div class="contact container">
         <div class="contact__form block">
           <h3 class="contact__form__title">Get in Touch</h3>
-          <form action="">
+          <form action="https://api.web3forms.com/submit" method="POST">
             <div class="input-row">
+              <input
+                type="hidden"
+                name="access_key"
+                value="0b278059-faa1-4ddf-acab-19a27e9ca266"
+              />
               <div class="input-group">
                 <label for="user-name" class="label">Name</label>
                 <input
@@ -590,7 +645,7 @@
               </div>
               <div class="info">
                 <p class="info-title">Email:</p>
-                <p>dment@gmail.com</p>
+                <p>dm.akademie1@gmail.com</p>
               </div>
             </div>
             <div class="info-item">
@@ -599,7 +654,7 @@
               </div>
               <div class="info">
                 <p class="info-title">Phone:</p>
-                <p>07888888888</p>
+                <p>+93799377797</p>
               </div>
             </div>
             <div class="info-item">
@@ -618,8 +673,19 @@
               <div class="info">
                 <p class="info-title">Social Links:</p>
                 <div class="social-links">
-                  <a href=""><i class="fa-brands fa-facebook fa-2x"></i></a>
-                  <a href=""><i class="fa-brands fa-whatsapp fa-2x"></i></a>
+                  <a
+                    target="_blank"
+                    href="https://www.facebook.com/share/1bMuJd66jt/"
+                    ><i class="fa-brands fa-facebook fa-2x"></i
+                  ></a>
+                  <a target="_blank" href="https://wa.me/93786370347"
+                    ><i class="fa-brands fa-whatsapp fa-2x"></i
+                  ></a>
+                  <a
+                    target="_blank"
+                    href="https://www.instagram.com/deutschmoment1?igsh=ZG9obmtjdzlpOHhs"
+                    ><i class="fa-brands fa-instagram fa-2x"></i
+                  ></a>
                 </div>
               </div>
             </div>
@@ -627,5 +693,13 @@
         </div>
       </div>
     </section>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 500,
+        easing: "ease-in",
+        once: true,
+      });
+    </script>
   </body>
 </html>
