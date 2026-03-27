@@ -16,6 +16,106 @@ const navLinks = document.querySelectorAll('.nav li');
 const ctaBtns = document.querySelectorAll('.buttons-container a');
 const cards = document.querySelectorAll('.card');
 
+
+const idSearchBtn = document.getElementById('id-search-btn');
+const clearSearchBtn = document.getElementById('reset-btn');
+const userIdInput = document.getElementById('id-input');
+const certificatePanel = document.getElementById('certificate-panel');
+const errorMessage = document.getElementById('error-message');
+
+const studentName = document.getElementById('student-name');
+const studentLevel = document.getElementById('student-level');
+const studentGrade = document.getElementById('student-grade');
+const completionDate = document.getElementById('completion-date');
+const issueDate = document.getElementById('issue-date');
+const certificateId = document.getElementById('certificate-id');
+const verifiedDate = document.getElementById('verified-date');
+
+const certificates = {
+    'DM-B1-2026-HR0016' : {
+        id: "DM-B1-2026-HR0016",
+        studentName: "Husna Rahmani",
+        level: "B1",
+        grade: "320/400",
+        completionDate: "March 15, 2026",
+        issueDate: "March 20, 2026",
+        verifiedDate: "3/20/2026",
+        isValid: true
+    },
+    'DM-B1-2026-SE0007' : {
+        id: 'DM-B1-2026-SE0007',
+        studentName: 'Sahil Emran',
+        level: 'B1',
+        grade: '320/400',
+        completionDate: 'January 13, 2026',
+        issueDate: 'January 18, 2026',
+        verifiedDate: '1/18/2026',
+        isValid: true
+    },
+    'DM-A1-2025-SN0001' : {
+        id: 'DM-A1-2025-SN0001',
+        studentName: 'Sara Naziri',
+        level: 'A1',
+        grade: '70/100',
+        completionDate: 'July 10, 2025',
+        issueDate: 'July 15, 2025',
+        verifiedDate: '7/15/2025',
+        isValid: true
+    }
+}
+
+clearSearchBtn.addEventListener('click', clearSearch);
+idSearchBtn.addEventListener('click', searchId);
+userIdInput.addEventListener('keypress', (e) => {
+    if(e.key === 'Enter') {
+        searchId();
+    }
+})
+
+function searchId() {
+    const trimmedId = userIdInput.value.trim();
+
+    if(!trimmedId) return;
+
+    if(certificates[trimmedId]) {
+        showVerifiedCertificate(trimmedId);
+    } else {
+        showErrorMessage();
+    }
+}
+
+function showErrorMessage() {
+    errorMessage.style.display = 'block';
+}
+
+function clearSearch() {
+    userIdInput.value = "";
+    certificatePanel.style.display = 'none';
+    errorMessage.style.display = 'none';
+    
+    studentName.textContent = '';
+    studentLevel.textContent = '';
+    studentGrade.textContent = '';
+    completionDate.textContent = '';
+    issueDate.textContent = '';
+    certificateId.textContent = '';
+    verifiedDate.textContent = '';
+}
+
+function showVerifiedCertificate(trimmedId) {
+    errorMessage.style.display = 'none';
+
+    studentName.textContent = certificates[trimmedId].studentName;
+    studentLevel.textContent = certificates[trimmedId].level;
+    studentGrade.textContent = certificates[trimmedId].grade;
+    completionDate.textContent = certificates[trimmedId].completionDate;
+    issueDate.textContent = certificates[trimmedId].issueDate;
+    certificateId.textContent = certificates[trimmedId].id;
+    verifiedDate.textContent = certificates[trimmedId].verifiedDate;
+
+    certificatePanel.style.display = 'block';
+}
+
 function setActivePage(targetId) {
     const pages = document.getElementsByClassName('page');
     for (const page of pages) page.style.display = 'none';

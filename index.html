@@ -86,6 +86,7 @@
         <ul class="list--vertical collapsible">
           <li class="link-active"><a href="#home">Home</a></li>
           <li><a href="#courses">Courses</a></li>
+          <li><a href="#verify-certificate">Verify Certificate</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
@@ -103,7 +104,7 @@
           </p>
           <div class="buttons-container">
             <a href="#courses" class="btn btn--accent">View Courses</a>
-            <a href="#contact" class="btn btn--outline">Contact Us</a>
+            <a href="#contact" class="btn btn--outline">Contact Me</a>
           </div>
         </div>
         <div class="hero-image-wrapper">
@@ -187,13 +188,13 @@
         </div>
       </div>
       <div class="featured container">
-        <h3 class="heading">Features of Our Courses</h3>
+        <h3 class="heading">Features of My Courses</h3>
         <div class="features-container">
           <div class="feature block" data-aos="fade-up" data-aos-delay="100">
             <div class="feature__icon">📚</div>
             <h4 class="heading">Accredited Textbooks</h4>
             <p class="feature__desc">
-              Using the latest Spektrum, Begegnungen, Das Laben, Netzwerk neu,
+              Using the latest Spektrum Deutsch, Begegnungen, Erkundungen, Miteinander, Momente, Das Laben, Netzwerk neu,
               Menschen, and Starten wir books
             </p>
           </div>
@@ -212,6 +213,116 @@
               Maximum 6 people per class for more attention
             </p>
           </div>
+        </div>
+      </div>
+    </section>
+    <section id="verify-certificate" class="page">
+      <div class="certificate-verify">
+        <h3 class="heading">Enter Certificate ID</h3>
+        <label for="id-input">Certificate ID:</label>
+        <input type="text" class="input" placeholder="Enter ID" id="id-input" />
+        <button class="btn btn--accent" id="id-search-btn">
+          <i class="fa-solid fa-magnifying-glass"></i> Verify
+        </button>
+        <button class="btn reset-btn" id="reset-btn">Reset</button>
+      </div>
+      <article class="certificate-card" id="certificate-panel">
+        <header class="certificate-card__header">
+          <div class="certificate-card__status-icon">
+            <i class="fa-regular fa-circle-check fa-2x"></i>
+          </div>
+          <div class="certificate-card__header-content">
+            <h2 class="certificate-card__title">Valid Certificate</h2>
+            <p class="certificate-card__description">
+              This certificate has been verified...
+            </p>
+          </div>
+        </header>
+        <div class="certificate-card__body">
+          <div class="certificate-card__item">
+            <div class="certificate-card__icon">
+              <i class="fa-regular fa-user"></i>
+            </div>
+            <div class="certificate-card__item-info">
+              <span class="certificate-card__label">Student Name</span>
+              <span class="certificate-card__value" id="student-name"></span>
+            </div>
+          </div>
+          <div class="certificate-card__item">
+            <div class="certificate-card__icon">
+              <i class="fa-solid fa-award"></i>
+            </div>
+            <div class="certificate-card__item-info">
+              <span class="certificate-card__label">Level</span>
+              <span class="certificate-card__value" id="student-level"></span>
+            </div>
+          </div>
+          <div class="certificate-card__item">
+            <div class="certificate-card__icon">
+              <i class="fa-regular fa-file-lines"></i>
+            </div>
+            <div class="certificate-card__item-info">
+              <span class="certificate-card__label">Score</span>
+              <span class="certificate-card__value" id="student-grade"></span>
+            </div>
+          </div>
+          <div class="certificate-card__item">
+            <div class="certificate-card__icon">
+              <i class="fa-regular fa-calendar"></i>
+            </div>
+            <div class="certificate-card__item-info">
+              <span class="certificate-card__label">Completion Date</span>
+              <span class="certificate-card__value" id="completion-date"></span>
+            </div>
+          </div>
+          <div class="certificate-card__item">
+            <div class="certificate-card__icon">
+              <i class="fa-regular fa-calendar"></i>
+            </div>
+            <div class="certificate-card__item-info">
+              <span class="certificate-card__label">Issue Date</span>
+              <span class="certificate-card__value" id="issue-date"></span>
+            </div>
+          </div>
+        </div>
+        <footer class="certificate-card__footer">
+          <div class="certificate-card__id-group">
+            <span class="certificate-card__icon"
+              ><i class="fa-solid fa-shield"></i
+            ></span>
+            <span class="certificate-card__id-label">Certificate ID:</span>
+            <span class="certificate-card__id-value" id="certificate-id"></span>
+          </div>
+          <div class="certificate-card__verify-tag">
+            Verified on <span id="verified-date"></span>
+          </div>
+        </footer>
+      </article>
+      <div class="error-card" id="error-message">
+        <div class="error-card__header">
+          <div class="error-card__icon"><i class="fa-regular fa-circle-xmark fa-2x"></i></div>
+          <div class="error-card__text">
+            <h2 class="error-card__title">Certificate Not Found</h2>
+            <p class="error-card__subtitle">
+              The certificate ID you entered could not be verified.
+            </p>
+          </div>
+        </div>
+        <div class="error-card__details">
+          <p>This could mean:</p>
+          <ul class="error-card__list list--vertical">
+            <li>The certificate ID was entered incorrectly</li>
+            <li>The certificate has not been issued by DeutschMoment Academy</li>
+            <li>The certificate may have been revoked or expired</li>
+          </ul>
+          <p class="error-card__contact">
+            If you believe this is an error, please contact me at
+            <a
+                href="https://wa.me/93799377797"
+                target="_blank"
+                >+93799377797</a
+              >
+          </p>
         </div>
       </div>
     </section>
@@ -516,7 +627,7 @@
                   id="user-name"
                   name="name"
                   class="input"
-                  placeholder="Mel"
+                  placeholder="Alex"
                   required
                 />
               </div>
@@ -563,7 +674,7 @@
                 id="user-message"
                 class="input"
                 rows="5"
-                placeholder="Tell us about your inquiry."
+                placeholder="Tell me about your inquiry."
                 required
               ></textarea>
             </div>

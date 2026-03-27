@@ -7,7 +7,7 @@
 */
 
 :root {
-    --accent: hsl(0, 100%, 43%);
+    --accent: #db0000;
     --accent-darker: hsl(0, 55%, 8%);
     --accent-secondary:hsl(48, 100%, 50%);
     --accent-secondary-darker: hsl(48, 76%, 13%);
@@ -265,6 +265,207 @@ label {
     }
 }
 
+/* Certificate-verification page */
+
+#verify-certificate {
+    padding: 2rem;
+    display: none;
+}
+
+.certificate-verify {
+    background-color: transparent;
+    border: 1px solid #333;
+    padding: 2rem;
+    margin: 7rem auto 3rem;
+    max-width: 700px;
+    border-radius: 8px;
+}
+
+.certificate-verify .input {
+    margin-bottom: 1rem;
+}
+
+.certificate-verify .btn {
+    padding: 10px 30px;
+    margin-right: .6rem;
+}
+
+.certificate-verify .reset-btn {
+    background-color: var(--bg-lighter);
+    border: 1px solid #333;
+    color: var(--body-text);
+    font-weight: 500;
+    box-shadow: none;
+}
+
+.certificate-verify .reset-btn:hover {
+    border: 0;
+    background-color: var(--accent);
+    color: #fff;
+}
+
+.certificate-card {
+    border: 2px solid #00c645;
+    display: none;
+    border-radius: 12px;
+    padding: 2rem;
+    font-weight: 500;
+    margin: 0 auto;
+    max-width: 700px;
+}
+
+.certificate-card__header {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.certificate-card__status-icon {
+    color: #00c84e;
+    background-color: rgba(0, 200, 78, .2);
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 5rem;
+    height: 5rem;
+}
+
+.certificate-card__title {
+    margin: 0;
+    font-size: 2.2rem;
+    color: #00c950;
+    font-weight: 600;
+}
+
+.certificate-card__description {
+    font-size: 1.4rem;
+    color: var(--body-text--mute);
+}
+
+.certificate-card__body {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-bottom: 2rem;
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+.certificate-card__item {
+    display: flex;
+    align-items: start;
+    gap: 1rem;
+}
+
+.certificate-card__icon {
+    color: var(--accent-secondary);
+}
+
+.certificate-card__item-info {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.4rem;
+}
+
+.certificate-card__label {
+    color: var(--body-text--mute);
+}
+
+.certificate-card__footer {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    font-size: 1.4rem;
+}
+
+.certificate-card__id-label {
+    color: var(--body-text--mute);
+}
+
+.certificate-card__verify-tag {
+    color: #00c950;
+    border: 1px solid hsla(144, 70%, 50%, .5);
+    background-color: hsla(144, 90%, 83%, 0.2);
+    width: fit-content;
+    border-radius: 8px;
+    padding: 1rem 1.5rem;
+}
+
+.error-card {
+    border: 2px solid var(--accent);
+    display: none;
+    border-radius: 12px;
+    padding: 2rem;
+    font-weight: 500;
+    margin: 0 auto;
+    max-width: 700px;
+}
+
+.error-card__header {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.error-card__icon {
+    color: var(--accent);
+    background-color: rgba(200, 0, 0, 0.2);
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 5rem;
+    height: 5rem;
+}
+
+.error-card__title {
+    margin: 0;
+    font-size: 2.2rem;
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.error-card__subtitle {
+    font-size: 1.4rem;
+    color: var(--body-text--mute);
+}
+
+.error-card__details {
+    background-color: hsla(357, 96%, 58%, 0.1);
+    border: 1px solid hsla(357, 96%, 58%, 0.2);
+    border-radius: 12px;
+    padding: 2rem;
+    font-size: 1.4rem;
+    color: var(--body-text--mute);
+}
+
+.error-card__list {
+    list-style-type: disc;
+    padding-left: 2rem;
+}
+
+.error-card__list li::marker {
+    color: red;
+}
+
+.error-card__contact a {
+    color: red;
+}
+
+@media screen and (min-width: 600px) {
+    .certificate-card__body {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .certificate-card__footer {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
 /* Contact Page */
 #contact {
     display: none;
@@ -276,7 +477,7 @@ label {
     gap: 4rem;
 }
 
-.contact .block{
+.contact .lock{
     background-color: var(--bg);
 }
 
