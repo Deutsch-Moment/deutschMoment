@@ -94,6 +94,8 @@ userIdInput.addEventListener("keypress", (e) => {
 function searchId() {
   const trimmedId = userIdInput.value.trim();
 
+  clearSearch();
+
   if (!trimmedId) return;
 
   if (certificates[trimmedId]) {
